@@ -75,8 +75,17 @@ function square(UI_body, width, height, color){
     square.style.width = width;
     //square.style.height = width;
     square.style.margin = "0";
-    square.style.backgroundColor = color;
+    square.style.backgroundColor = getRandomColor();
     square.style.paddingBottom = "11.1%";
-    square.style.cssFloat = "left";
+    square.style.cssfloat = "left";
     UI_body.append(square);
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
